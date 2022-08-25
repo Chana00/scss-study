@@ -147,3 +147,16 @@ div .op {
     $width: 100px;
     height: ratio($width, 1/2 );
 }
+
+//색상 내장 함수
+.colorBox {
+    $color: royalblue;
+    width: 200px;
+    height: 100px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: $color;
+    &.built-in {
+        background-color: mix($color, red); //$color와 red를 섞은 색이 나온다
+    }
+}
