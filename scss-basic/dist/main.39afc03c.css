@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/*
+    scss설명을 적어놓은 notion link
+    https://delightful-barometer-dba.notion.site/SCSS-Sass-SCSS-72bc43b8df6d4657995620ee6c34622e
+*/
+.container h1 {
+  color: royalblue;
+}
+
+.overlap ul li {
+  font-size: 40px;
+}
+.overlap ul li .name {
+  color: orange;
+}
+.overlap ul li .age {
+  color: darkblue;
+}
+
+.btn {
+  position: absolute;
+}
+.btn.active {
+  color: red;
+}
+
+.list li:last-child {
+  margin-right: 0;
+}
+
+.fs-small {
+  font-size: 12px;
+}
+.fs-small {
+  font-size: 16px;
+}
+.fs-small {
+  font-size: 20px;
+}
+
+.btn {
+  position: absolute;
+}
+.btn.active {
+  color: red;
+}
+
+.list li:last-child {
+  margin-right: 0;
+}
+
+div .op {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  margin: 30px/2;
+  padding: 6px;
+}
+
+.container {
+  position: fixed;
+  top: 200px;
+  left: 100px;
+}
+.container .item {
+  width: 100px;
+  height: 100px;
+  transform: translateX(100px);
+}
+
+/*
+    나누기는 제대로 작동되지 않을 수 있다 ( css 문법 중 단축 속성에서 구분을 위해 / 기호를 사용하기 때문 )
+    따라서 1. 괄호로 묶거나 2. 다른 연산자와 함께 사용하거나 3. 변수를 적용해준다
+*/
+div .op {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  margin: 30px/2;
+  padding: 6px;
+}
+
+.mix {
+  display: 200px;
+  justify-content: 200px;
+  align-items: red;
+}
+.mix .item {
+  display: 50px;
+  justify-content: 50px;
+  align-items: green;
+}
+
+.box {
+  display: 100px;
+  justify-content: 100px;
+  align-items: tomato;
+}
+
+.box:nth-child(1) {
+  width: 100px;
+  height: 50px;
+}
+
+.box:nth-child(2) {
+  width: 200px;
+  height: 50px;
+}
+
+.box:nth-child(3) {
+  width: 300px;
+  height: 50px;
+}
+
+.box:nth-child(4) {
+  width: 400px;
+  height: 50px;
+}
+
+.box:nth-child(5) {
+  width: 500px;
+  height: 50px;
+}
+
+.box {
+  height: 50px;
+}
+
+/*# sourceMappingURL=/main.39afc03c.css.map */

@@ -1,0 +1,149 @@
+/*
+    scss설명을 적어놓은 notion link
+    https://delightful-barometer-dba.notion.site/SCSS-Sass-SCSS-72bc43b8df6d4657995620ee6c34622e
+*/
+
+// 기본 예시
+$color: royalblue;
+.container {
+    h1 {
+        color: $color;
+    }
+}
+
+//중첩
+.overlap {
+    ul {
+        li {
+            font-size: 40px;
+            .name {
+                color: orange;
+            }
+            .age {
+                color:darkblue;
+            }
+        }
+    }
+}
+
+//상위 선택자 참조
+.btn {
+    position : absolute;
+    &.active {
+        color: red;
+    }
+}
+
+
+.list {
+    li {
+        &:last-child {
+            margin-right: 0;    
+        }
+    }
+}
+
+.fs {
+    &-small {font-size : 12px;}
+    &-small {font-size : 16px;}
+    &-small {font-size : 20px;}
+}
+
+//중첩된 속성
+.btn {
+    position : absolute;
+    &.active {
+        color: red;
+    }
+}
+
+.list {
+    li {
+        &:last-child {
+            margin-right: 0;    
+        }
+    }
+}
+
+div .op{
+    width: 20px + 20px;
+    height: 40px - 10px;
+    font-size : 10px * 2;
+    margin: 30px / 2;
+    padding: 20px % 7;
+}
+
+//변수
+.container {
+    $size: 200px;
+    
+    position: fixed;
+    top: $size;
+    .item {
+		 $size: 100px;
+         width: $size;
+         height: $size;
+        transform: translateX($size);
+    }
+	
+	left: $size;
+}
+
+
+//산술연산
+/*
+    나누기는 제대로 작동되지 않을 수 있다 ( css 문법 중 단축 속성에서 구분을 위해 / 기호를 사용하기 때문 )
+    따라서 1. 괄호로 묶거나 2. 다른 연산자와 함께 사용하거나 3. 변수를 적용해준다
+*/
+div .op {
+    width: 20px + 20px;
+    height: 40px - 10px;
+    font-size : 10px * 2;
+    margin: 30px / 2;
+    padding: 20px % 7;
+}
+
+
+//코드 재활용 - @mixin
+@mixin center($centerSize: 50px, $color: tomato) {
+    display: $centerSize;
+    justify-content: $centerSize;
+    align-items: $color;
+}
+
+.mix {
+    @include center(200px, red);
+    .item {
+        @include center($color : green);
+    }
+}
+
+.box {
+    @include center(100px);    
+}
+
+//반복문
+//1부터 10번까지 5번 반복 (css는 1번부터 시작)
+//js는 보간하기 위해 ${} 형태로 사용하지만 scss는 #{} 형태로 # 기호 사용
+@for $i from 1 through 5 {
+    .box:nth-child(#{$i}) {
+        width: 100px * $i;
+        height: 50px;
+    }
+}
+
+//함수
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+@function ratio($size, $ratio) {
+    @return $size * $ratio
+}
+
+.box {
+    $width: 100px;
+    height: ratio($width, 1/2 );
+}
