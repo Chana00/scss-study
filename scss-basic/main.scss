@@ -2,6 +2,18 @@
     scss설명을 적어놓은 notion link
     https://delightful-barometer-dba.notion.site/SCSS-Sass-SCSS-72bc43b8df6d4657995620ee6c34622e
 */
+//scss의 가져오기
+//1번
+//@import url("./sub.scss");
+
+//2번
+@import "./sub.scss";
+
+//3번
+@import "./sub";
+
+//여러개 가져오기
+@import "./sub", "./sub2";
 
 // 기본 예시
 $color: royalblue;
