@@ -1,0 +1,30 @@
+$number: 1;            //.5, 100px, 1em 등
+$string: bold;         // relative, "../a.png"   
+$color: red;         // blue, #FFFF00, rgba(0,0,0,.1)
+$boolean: true;        // false
+$null: null;
+$list: orange, royalblue, yellow;
+$map: (
+    o: orange,
+    r: royalblue,
+    y: yellow
+);
+
+.box {
+    width: 100px;
+    color: red;
+    position: relative;
+}
+
+//list에 있는 데이터들을 c에 담아서 반복적으로 처리하겠다
+@each $c in $list {
+    .box {
+        color: $c;
+    }
+}
+
+@each $k, $v in $map {
+    .box-#{$k}{
+        color: $v;
+    }
+}
